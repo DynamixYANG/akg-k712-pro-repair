@@ -1,5 +1,9 @@
 # ref/ 版权声明 / Copyright Notice
 
+[中文](#中文) | [English](#english)
+
+## 中文
+
 本目录中的 PDF 文件 **不是** 本仓库作者的作品，**不受** 本仓库 CC BY-NC-SA 4.0 许可协议约束。
 
 | 文件 | 内容 | 版权方 |
@@ -11,6 +15,15 @@
 - 本仓库不对其主张任何权利，也不以任何许可协议对其再授权。
 - 如权利人要求，将立即删除。
 
----
+## English
 
-The PDF files in this directory are third-party documents, **not** covered by this repository's CC BY-NC-SA 4.0 license. They are included unmodified, for repair reference only. All rights belong to their respective owners (AKG Acoustics GmbH / HARMAN International; Source Interlink Media for the measurement sheet). They will be removed upon request by the rights holder.
+The PDF files in this directory are **not** the work of this repository's author and are **not** covered by this repository's CC BY-NC-SA 4.0 license.
+
+| File | Content | Copyright holder |
+|---|---|---|
+| `Manuale-AKG-K712PRO.pdf` | K712 PRO product cutsheet + K612/K712 Service Manual (#2458Z00XXX, 10/2015: exploded view, parts list, repair hints) | © AKG Acoustics GmbH / HARMAN International Industries, Incorporated |
+| `AKGK712.pdf` | AKG K712 headphone measurement sheet (frequency response, isolation, impedance, THD, etc.) | Marked © Source Interlink Media (third-party measurements); product trademarks belong to AKG Acoustics GmbH |
+
+- These files are included as-is (unmodified), **for repair reference only**. All rights belong to their respective owners.
+- This repository claims no rights in them and does not re-license them under any license.
+- They will be removed promptly upon request by the rights holder.

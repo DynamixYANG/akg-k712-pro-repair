@@ -1,228 +1,232 @@
-# AKG K712 PRO 头梁修复记录（3D 打印零件 + 发圈替换橡胶吊带）
+English | [简体中文](README.zh-CN.md)
+
+# AKG K712 PRO Headband Repair (3D-Printed Parts + Hair Ties as Elastic Loops)
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-![修复完成](images/16_final_front.jpg)
+![Repair finished](images/16_final_front.jpg)
 
-本仓库记录了一副 **AKG K712 PRO** 开放式监听耳机头梁部分的 DIY 修复：把头梁里老化的原厂橡胶吊带（官方名称 *Rubber loop*，零件 6）换成两根编织款发圈（弹力绳），并用 3D 打印件代替拆卸时必须破坏/取下的 **装饰盖（Cover，零件 3）** 和 **卡扣铆钉（Locking knob，零件 7）**。仓库包含过程照片、可直接切片打印的 3MF 文件，以及作为结构参考的官方维修手册。
+This repository documents a DIY repair of the headband of an **AKG K712 PRO** open-back studio headphone: the aged factory rubber loops (official name *Rubber loop*, part 6) were replaced with two braided hair ties (elastic cord), and 3D-printed parts replace the **Cover (part 3)** and **Locking knob (part 7)**, which have to be broken or pried out during disassembly. The repo contains process photos, ready-to-slice 3MF files, and the official service manual as a structural reference.
 
-> 说明：文中零件编号和名称均来自 AKG 官方 K612/K712 维修手册（见 [`ref/`](ref/)）。照片能直接看到的内容会直接描述；照片看不到、根据模型尺寸或手册推断的内容都会标注 **（推断）**。
-
----
-
-## 目录
-
-- [背景：K712 的头梁结构](#背景k712-的头梁结构)
-- [修复过程](#修复过程)
-- [注意事项](#注意事项)
-- [3D 打印说明](#3d-打印说明)
-- [文件夹结构](#文件夹结构)
-- [索引](#索引)
-- [参考资料](#参考资料)
-- [许可协议](#许可协议)
+> Note: part numbers and names in this document come from the official AKG K612/K712 service manual (see [`ref/`](ref/)). What the photos directly show is described as such; anything not visible in the photos and inferred from model dimensions or the manual is marked **(inferred)**.
 
 ---
 
-## 背景：K712 的头梁结构
+## Contents
 
-根据官方维修手册（Service Manual #2458Z00XXX, 10/2015）中的爆炸图和零件表，与本次修复相关的零件如下：
+- [Background: the K712 headband structure](#background-the-k712-headband-structure)
+- [Repair process](#repair-process)
+- [Cautions](#cautions)
+- [3D printing notes](#3d-printing-notes)
+- [Folder structure](#folder-structure)
+- [Index](#index)
+- [References](#references)
+- [License](#license)
 
-| 编号 | 英文名称 | 德文名称 | 中文说明 |
+---
+
+## Background: the K712 headband structure
+
+According to the exploded view and parts list in the official service manual (Service Manual #2458Z00XXX, 10/2015), the parts relevant to this repair are:
+
+| No. | English name | German name | Description |
 |---|---|---|---|
-| 1 | Outer headband compl. | Bügel kpl. | 外头梁（两根带绝缘层的钢丝，末端连到耳罩） |
-| 2 | Headband compl. | Bügelband kpl. | 皮质头带（压在头顶的那条） |
-| 3 | Cover | Abdeckung | 滑块外侧的圆形装饰盖 |
-| 4 | Inner slider | Gleitstück innen | 内滑块 |
-| 5 | Outer slider | Gleitstück außen | 外滑块（套在两根钢丝上滑动） |
-| 6 | Rubber loop | Gummischlaufe | 橡胶吊带：拉住头带、提供自适应头围的弹力 |
-| 7 | Locking knob | Schnappniet | 卡扣铆钉：把内/外滑块和头带锁在一起 |
-| 9 / 20 | Cover left (+MiniXLR) / Cover right | Deckel | 耳罩上盖（钢丝卡在上面） |
-| 8 / 22 | Grid cover | Gitterdeckel | 耳罩外侧格栅 |
-| 10 | Screw Ejot 22x5 | Schraube | 格栅下方固定上盖的两颗螺丝 |
+| 1 | Outer headband compl. | Bügel kpl. | Outer headband (two insulated steel wires, ends attached to the ear cups) |
+| 2 | Headband compl. | Bügelband kpl. | Leather headband (the strap that rests on your head) |
+| 3 | Cover | Abdeckung | Round decorative cover on the outside of the slider |
+| 4 | Inner slider | Gleitstück innen | Inner slider |
+| 5 | Outer slider | Gleitstück außen | Outer slider (slides along the two steel wires) |
+| 6 | Rubber loop | Gummischlaufe | Rubber loop: pulls the headband up and provides the self-adjusting tension |
+| 7 | Locking knob | Schnappniet | Snap rivet that locks the inner/outer sliders and the headband together |
+| 9 / 20 | Cover left (+MiniXLR) / Cover right | Deckel | Ear-cup lid (the steel wires snap into it) |
+| 8 / 22 | Grid cover | Gitterdeckel | Outer grille of the ear cup |
+| 10 | Screw Ejot 22x5 | Schraube | Two screws under the grille that hold the lid |
 
-K712 的自适应头带靠两侧的橡胶吊带（6）把皮头带往上拉。橡胶吊带用久了会老化、失去弹性或断裂，这是这类 AKG 头梁的常见毛病。
+The K712's self-adjusting headband relies on the rubber loops (6) on each side to pull the leather strap upward. Over time the rubber ages, loses its elasticity or snaps — a common failure on this family of AKG headbands.
 
-手册中更换橡胶吊带的官方步骤是：**用螺丝刀从 CE 标志下方的缺口把装饰盖（3）撬出来（break out），然后按下卡扣的同时把卡扣铆钉（7）顶出来。** 也就是说，装饰盖拆一次基本就坏了，卡扣铆钉也容易损坏——这就是本项目要 3D 打印替换件的原因。
-
----
-
-## 修复过程
-
-### 1. 准备：找老婆要两根新发圈
-
-![发圈](images/01_hair_ties_preparation.jpg)
-
-替换橡胶吊带（6）的弹力绳，用的就是普通的**编织款发圈**——粗细、弹性和长度都刚好，颜色还能挑和 K712 配套的橙色。所以第一步：**找老婆要两根新发圈**（记得是*新的*，并且要先征得同意 😉）。照片里那一罐就是“物料库”。
-
-### 2. 打印替换用的“铆钉 + 装饰盖”
-
-![打印好的盖帽](images/02_printed_pin_caps.jpg)
-
-打印了 3 个带双色 Logo 的盖帽（黑色底 + 橙色 Logo 嵌片，与 K712 的黑橙配色呼应），对应 `3d/k712pro_pin_v2.3mf` 中的 `k712pro_top` 零件。盖帽直径约 15 mm。
-
-![盖帽背面的铜螺母](images/03_pin_caps_heat_set_inserts.jpg)
-
-盖帽背面中间有一个凸台，凸台里热熔压入了**黄铜热熔螺母**（照片中两个已经装好，一个还没装），凸台侧面开有缺口。**（推断）** 这个凸台的作用相当于原厂卡扣铆钉（7）的轴，穿过头带和滑块的孔；缺口用来让开内部结构或定位。
-
-### 3. 确认螺丝规格
-
-![螺丝规](images/04_screw_size_check.jpg)
-
-用打印的螺丝规确认固定螺丝的直径和长度。固定螺丝规格为 **M2 × 6 mm**（背面垫片的中心孔约 Ø2.4 mm，正好让 M2 螺丝穿过）。拧的时候注意扭矩，见[注意事项](#注意事项)。
-
-### 4. 组装滑块：垫片 + 螺丝 + 盖帽
-
-![滑块内侧](images/05_slider_inner_side_screw.jpg)
-
-滑块内侧：打印的圆形垫片（`3d/k712pro_pin_v2.3mf` 中的 `Body1`，直径约 13 mm、厚约 4.5 mm，表面带纹理）从内侧压住，中间一颗螺丝拧进外侧盖帽的铜螺母里，把头带、内滑块（4）和外滑块（5）夹在一起，替代原来的卡扣铆钉（7）。
-
-![滑块外侧](images/06_slider_outer_side_logo_cap.jpg)
-
-滑块外侧：带橙色 Logo 的盖帽替代原来的装饰盖（3）。原厂橡胶吊带（6）的位置换成了**橙色编织发圈**，从滑块两侧的卡槽穿出、在下方形成一个环。
-
-![两个滑块](images/07_sliders_with_elastic_cord.jpg)
-
-左右两个滑块总成（拆下状态）。左边的已经把发圈绕进滑块的槽里，右边的还没装。
-
-### 5. 打开耳罩，固定发圈末端
-
-![拆格栅](images/08_grille_removal_tweezers.jpg)
-
-按手册方法取下耳罩外侧格栅（8/22）：用尖头镊子插进两个尽量远的格栅网孔，**逆时针**转动整个格栅直到卡扣松开。格栅下面是固定上盖的两颗螺丝（10）。
-
-![耳罩端的发圈](images/09_cord_routing_at_earcup.jpg)
-
-拆下耳罩上盖（9/20）后可以看到外头梁（1）两根钢丝的末端连接块。发圈从滑块沿钢丝向下，绕过连接块的两个角固定，替代原来橡胶吊带挂在这里的位置。旁边能看到单元引线（红、白等）焊在端子上，操作时不要扯到。
-
-![上盖打开](images/10_earcup_lid_opened.jpg)
-
-上盖翻开时的状态：发圈在连接块内侧被压住，上盖的内侧结构和单元引线（黄、紫/红、白）清晰可见。
-
-### 6. 测量与对称调整
-
-![测量 A](images/11_cord_routing_measure_a.jpg)
-![测量 B](images/12_cord_routing_measure_b.jpg)
-
-用钢尺对比左右两侧滑块到耳罩连接块的距离。
-
-`3d/k712_inserts.3mf` 打印的 **C 形垫套**就是在这一步用的：它是**调整用的垫片**，卡在钢丝末端、靠近耳罩连接块的位置，用来补偿左右两侧尺寸的差异。做法是**先手工测量两侧尺寸，再按需在偏短的一侧塞入垫套，直到两边一致**。本次修复中，所有垫套最后都装在了**同一侧**。
-
-> ⚠️ 注意：这两张测量照片里垫套在两侧都装着，那只是测量过程中的状态。**如果照着照片两侧都装，就会造成左右不对称。** 不要照搬照片——先量，再按需加垫套，直到两侧对称为止。
-
-### 7. 装回并试戴
-
-![装回侧面](images/13_reassembled_side.jpg)
-![装回正面](images/14_reassembled_front.jpg)
-![手持](images/15_reassembled_in_hand.jpg)
-
-装回上盖、螺丝（10）和格栅后的样子。可以看到盖帽、滑块和橙色发圈与原机黑橙配色融为一体。手册建议：装回后做听音测试，用**单声道**信号（不要用正弦波）确认声像在正中间——特别是如果拆焊过单元引线时。
-
-### 8. 完成
-
-![完成正面](images/16_final_front.jpg)
-![完成侧面](images/17_final_side.jpg)
+The manual's official procedure for replacing the rubber loops is: **break out the cover (3) by inserting a screwdriver into the notch below the CE sign, then push out the locking knob (7) while depressing its latches.** In other words, the cover is basically destroyed after one removal, and the locking knob breaks easily — which is why this project 3D-prints replacements.
 
 ---
 
-## 注意事项
+## Repair process
 
-1. **发圈选编织款、弹性好的新发圈**，左右两根最好是同一款，弹力一致。
-2. **装饰盖（3）拆了基本就坏**：官方方法是从 CE 标志下方的缺口撬出，属于破坏性拆卸。动手前先准备好替换件（本仓库的盖帽）。
-3. **卡扣铆钉（7）**：需要一边把卡扣往里压、一边把铆钉往外顶，用力过猛容易断。
-4. **格栅（8/22）是卡扣 + 逆时针旋转**，不是撬下来的；用尖头镊子插网孔、两点尽量远，均匀转动，别划伤网面。
-5. **耳罩上盖（9/20）同时卡在两根钢丝上**：拆之前先松开格栅下的两颗螺丝（10），再从两侧按压上盖露出卡扣、用小一字螺丝刀压下卡扣后再拔出。
-6. **单元引线很细**：上盖里有红/黄/白（以及左侧的 Mini XLR）引线，翻开上盖时不要拉扯。若需换单元，手册要求螺丝 15 只用“适中力度”拧紧，并注意相位（极性）正确。
-7. **热熔螺母**：用烙铁装热熔铜螺母时温度别太高、垂直压入，避免把凸台烫变形。
-8. **M2 × 6 mm 螺丝注意扭矩，不要拧太紧！** 3D 打印件的层间结合力较弱，拧过头会把盖帽凸台或垫片沿层线撑裂。拧到夹紧、滑块不松动即可。
-9. **左右对称靠测量 + 垫套**：先用尺子测量两侧尺寸，再按需在一侧加入 C 形垫套（`k712_inserts.3mf`），直到两侧一致。**不要照搬测量照片里两侧都装垫套的状态**，否则会不对称。本次是全部装在同一侧。
-10. **耳垫（19）是卡口式的**，逆时针转即可取下（手册说明），本次修复不一定需要拆。
-11. 本记录仅为个人维修经验，拆机有风险，可能失去保修，请自行判断。
+### 1. Preparation: ask your wife for two new hair ties
+
+![Hair ties](images/01_hair_ties_preparation.jpg)
+
+The elastic that replaces the rubber loops (6) is simply an ordinary **braided hair tie** — thickness, stretch and length are just right, and you can even pick an orange one to match the K712. So step one: **ask your wife for two new hair ties** (make sure they're *new* ones, and ask permission first 😉). The jar in the photo is the "parts bin".
+
+### 2. Print the replacement "knob + cover"
+
+![Printed caps](images/02_printed_pin_caps.jpg)
+
+Three two-color logo caps were printed (black body + orange logo inlay, matching the K712's black-and-orange color scheme); these are the `k712pro_top` parts in `3d/k712pro_pin_v2.3mf`. The caps are about 15 mm in diameter.
+
+![Brass inserts on the back of the caps](images/03_pin_caps_heat_set_inserts.jpg)
+
+There is a boss in the middle of the back of each cap with a **brass heat-set insert** melted in (two are already installed in the photo, one is not yet), and the boss has a notch on its side. **(Inferred)** The boss takes the role of the original locking knob's (7) shaft, passing through the holes in the headband and sliders; the notch provides clearance for internal features or acts as a locator.
+
+### 3. Check the screw size
+
+![Screw gauge](images/04_screw_size_check.jpg)
+
+A printed screw gauge was used to check the diameter and length of the fixing screw. The screw is **M2 × 6 mm** (the center hole of the inner disc is about Ø2.4 mm, a clearance fit for M2). Mind the torque when tightening — see [Cautions](#cautions).
+
+### 4. Assemble the slider: disc + screw + cap
+
+![Inner side of slider](images/05_slider_inner_side_screw.jpg)
+
+Inner side of the slider: the printed round disc (`Body1` in `3d/k712pro_pin_v2.3mf`, about 13 mm in diameter and 4.5 mm thick, with a textured surface) presses from the inside, and a screw in the middle threads into the brass insert of the outer cap, clamping the headband, inner slider (4) and outer slider (5) together — replacing the original locking knob (7).
+
+![Outer side of slider](images/06_slider_outer_side_logo_cap.jpg)
+
+Outer side of the slider: the cap with the orange logo replaces the original cover (3). The original rubber loop (6) has been replaced by an **orange braided hair tie**, which exits through the slots on both sides of the slider and forms a loop below.
+
+![Both sliders](images/07_sliders_with_elastic_cord.jpg)
+
+The left and right slider assemblies (removed). The left one already has the hair tie routed through the slider's grooves; the right one doesn't yet.
+
+### 5. Open the ear cup and anchor the end of the hair tie
+
+![Removing the grille](images/08_grille_removal_tweezers.jpg)
+
+Remove the outer grille (8/22) as described in the manual: insert pointed tweezers into two grille holes as far apart as possible and turn the whole grille **counter-clockwise** until the latches release. Under the grille are the two screws (10) that hold the lid.
+
+![Hair tie at the ear cup](images/09_cord_routing_at_earcup.jpg)
+
+With the ear-cup lid (9/20) removed you can see the end block of the outer headband's (1) two steel wires. The hair tie runs down from the slider along the wires and is anchored around two corners of the end block, taking the place where the original rubber loop attached. The driver leads (red, white, etc.) soldered to the terminals are visible nearby — don't pull on them.
+
+![Lid opened](images/10_earcup_lid_opened.jpg)
+
+The lid flipped open: the hair tie is held down inside the end block, and the inner structure of the lid and the driver leads (yellow, purple/red, white) are clearly visible.
+
+### 6. Measure and balance both sides
+
+![Measurement A](images/11_cord_routing_measure_a.jpg)
+![Measurement B](images/12_cord_routing_measure_b.jpg)
+
+Use a steel ruler to compare the distance from the slider to the ear-cup end block on the left and right sides.
+
+The **C-shaped spacers** printed from `3d/k712_inserts.3mf` are used in this step: they are **adjustment shims** that clip onto the end of the steel wire near the ear-cup end block, compensating for differences between the two sides. The procedure is: **measure both sides by hand first, then insert spacers on the shorter side as needed until both sides match.** In this repair, all the spacers ended up on **one side**.
+
+> ⚠️ Warning: in these two measurement photos, spacers are fitted on both sides — that was only an intermediate state during measurement. **If you copy the photos and fit spacers on both sides, the headband will end up asymmetric.** Don't follow the photos literally — measure first, then add spacers as needed until both sides are symmetric.
+
+### 7. Reassemble and try on
+
+![Reassembled, side](images/13_reassembled_side.jpg)
+![Reassembled, front](images/14_reassembled_front.jpg)
+![In hand](images/15_reassembled_in_hand.jpg)
+
+After refitting the lid, the screws (10) and the grille. The caps, sliders and orange hair ties blend in with the headphone's original black-and-orange look. The manual recommends a listening test after reassembly: use a **mono** signal (not a sine wave) to check that the sound image is centered — especially if you desoldered any driver leads.
+
+### 8. Done
+
+![Finished, front](images/16_final_front.jpg)
+![Finished, side](images/17_final_side.jpg)
 
 ---
 
-## 3D 打印说明
+## Cautions
 
-两份文件均为 **Bambu Studio** 工程文件（3MF，包含切片设置），在 Bambu Lab A1 / 0.4 mm 喷嘴上配置；其他切片软件（如 PrusaSlicer / OrcaSlicer）一般也能导入几何体。
+1. **Use new, braided hair ties with good elasticity**, ideally two of the same kind so both sides pull equally.
+2. **The cover (3) is basically destroyed on removal**: the official method is to pry it out from the notch below the CE sign — a destructive step. Have the replacement parts (the caps in this repo) ready before you start.
+3. **Locking knob (7)**: you have to press the latches inward while pushing the knob outward; too much force will break it.
+4. **The grille (8/22) is latched and turns counter-clockwise** — don't pry it off. Insert pointed tweezers into two holes as far apart as possible and turn evenly, without scratching the mesh.
+5. **The ear-cup lid (9/20) is also snapped onto the two steel wires**: first undo the two screws (10) under the grille, then squeeze the sides of the lid until the latches show, press the latches in with a small flat screwdriver, and pull the lid off.
+6. **The driver leads are thin**: there are red/yellow/white leads (and the Mini XLR on the left side) under the lid — don't pull on them when opening it. If you replace a driver, the manual says to tighten screws 15 with moderate force only and to make sure the phasing (polarity) is correct.
+7. **Heat-set inserts**: don't run the soldering iron too hot, and press the insert in straight, so the boss doesn't deform.
+8. **Mind the torque on the M2 × 6 mm screw — don't overtighten!** Layer adhesion in 3D-printed parts is weak; overtightening can split the cap boss or the disc along the layer lines. Tighten just until it clamps and the slider doesn't wobble.
+9. **Symmetry comes from measuring + spacers**: measure both sides with a ruler first, then add C-shaped spacers (`k712_inserts.3mf`) on one side as needed until both sides match. **Don't copy the measurement photos, where spacers are fitted on both sides**, or the result will be asymmetric. In this repair they all went on one side.
+10. **The ear pads (19) have a bayonet lock** and come off by turning them counter-clockwise (per the manual); this repair doesn't necessarily require removing them.
+11. This is a personal repair log. Disassembly is at your own risk and may void your warranty.
 
-| 文件 | 内容 | 尺寸（由模型几何体测得） |
+---
+
+## 3D printing notes
+
+Both files are **Bambu Studio** project files (3MF with slicer settings), set up for a Bambu Lab A1 with a 0.4 mm nozzle; other slicers (e.g. PrusaSlicer / OrcaSlicer) can usually import the geometry.
+
+| File | Content | Dimensions (measured from model geometry) |
 |---|---|---|
-| `3d/k712pro_pin_v2.3mf` | **铆钉/盖帽替换件**：3 × `k712pro_top`（盖帽，主体 + 0.6 mm 厚 Logo 嵌片，双色）、4 × `Body1`（内侧垫片） | 盖帽 Ø15 × 约 10 mm；Logo 嵌片约 9.4 × 10 × 0.6 mm；垫片 Ø13 × 4.5 mm，中心孔约 Ø2.4 mm |
-| `3d/k712_inserts.3mf` | 4 × C 形开口垫套：**左右尺寸调整用的垫片**，卡在钢丝末端，测量后按需加在偏短的一侧（不是每侧固定 2 个；本次全部装在同一侧） | 外径 Ø4 mm，内径约 Ø1.6 mm，长 5.8 mm，侧面开口 |
+| `3d/k712pro_pin_v2.3mf` | **Knob/cover replacement**: 3 × `k712pro_top` (cap, body + 0.6 mm logo inlay, two colors), 4 × `Body1` (inner disc) | Cap Ø15 × approx. 10 mm; logo inlay approx. 9.4 × 10 × 0.6 mm; disc Ø13 × 4.5 mm, center hole approx. Ø2.4 mm |
+| `3d/k712_inserts.3mf` | 4 × C-shaped split spacers: **shims for balancing left/right dimensions**, clipped onto the end of the steel wire and added to the shorter side as needed after measuring (not a fixed 2 per side; in this repair all went on one side) | OD Ø4 mm, ID approx. Ø1.6 mm, length 5.8 mm, slotted |
 
-工程文件中保存的设置（仅供参考）：
+Settings saved in the project files (for reference only):
 
-- 材料：`k712pro_pin_v2` 的盖帽和垫片分配到 **PETG** 料槽（黑色主体 + 橙色 Logo，Bambu PETG HF，喷嘴 240 °C）。`k712_inserts` 的套管在工程里分配到 1 号料槽（PLA Basic），但缩略图显示为橙色，实际用料请按需选择。
-- 层高 **0.08 mm**（“0.08mm High Quality”预设），2 层墙，15% 螺旋（gyroid）填充。
-- `k712pro_pin_v2` 开启了支撑（normal/auto）；`k712_inserts` 未开支撑。
-- 打印数量比实际需要的多（一副耳机需要 2 套盖帽 + 垫片），多出来的可以当备件。
+- Material: in `k712pro_pin_v2` the caps and discs are assigned to **PETG** slots (black body + orange logo, Bambu PETG HF, 240 °C nozzle). In `k712_inserts` the spacers are assigned to slot 1 (PLA Basic), but the thumbnail shows them in orange — choose the material yourself.
+- Layer height **0.08 mm** ("0.08mm High Quality" preset), 2 walls, 15% gyroid infill.
+- `k712pro_pin_v2` has supports enabled (normal/auto); `k712_inserts` has no supports.
+- The plates print more parts than needed (one headphone needs 2 sets of cap + disc); keep the extras as spares.
 
-其他需要准备的：与 M2 螺丝匹配的黄铜热熔螺母、**M2 × 6 mm** 螺丝（每侧 1 颗）、两根编织款发圈（照片中为橙色）。
+You'll also need: brass heat-set inserts matching M2 screws, **M2 × 6 mm** screws (one per side), and two braided hair ties (orange in the photos).
 
 ---
 
-## 文件夹结构
+## Folder structure
 
 ```
 akg-k712-pro-repair/
-├── README.md              本文档
-├── LICENSE                CC BY-NC-SA 4.0 法律文本
+├── README.md              English documentation (shown by default on GitHub; this file)
+├── README.zh-CN.md        Chinese documentation
+├── LICENSE                CC BY-NC-SA 4.0 legal code
 ├── 3d/
-│   ├── k712pro_pin_v2.3mf 盖帽 + 垫片（替代零件 3 和 7）
-│   └── k712_inserts.3mf   C 形垫套（左右尺寸调整用）
-├── images/                过程照片 01–17（已去除元数据、部分区域已打码）
+│   ├── k712pro_pin_v2.3mf Cap + disc (replaces parts 3 and 7)
+│   └── k712_inserts.3mf   C-shaped spacers (for left/right balancing)
+├── images/                Process photos 01–17 (metadata stripped, some areas blurred)
 └── ref/
-    ├── NOTICE.md          第三方文档版权声明
+    ├── NOTICE.md          Copyright notice for third-party documents
     ├── Manuale-AKG-K712PRO.pdf
     └── AKGK712.pdf
 ```
 
 ---
 
-## 索引
+## Index
 
-| 路径 | 说明 |
+| Path | Description |
 |---|---|
-| `README.md` | 修复说明（本文） |
-| `LICENSE` | CC BY-NC-SA 4.0 全文 |
-| `3d/k712pro_pin_v2.3mf` | 盖帽（带 Logo）+ 内侧垫片，Bambu Studio 工程 |
-| `3d/k712_inserts.3mf` | C 形垫套 ×4（测量后按需加在一侧，调整左右对称），Bambu Studio 工程 |
-| `images/01_hair_ties_preparation.jpg` | 准备：一罐编织发圈（替换橡胶吊带用） |
-| `images/02_printed_pin_caps.jpg` | 打印完成的 3 个双色盖帽 |
-| `images/03_pin_caps_heat_set_inserts.jpg` | 盖帽背面，热熔铜螺母 |
-| `images/04_screw_size_check.jpg` | 用螺丝规确认螺丝规格（M2 × 6 mm） |
-| `images/05_slider_inner_side_screw.jpg` | 滑块内侧：垫片 + 螺丝 |
-| `images/06_slider_outer_side_logo_cap.jpg` | 滑块外侧：Logo 盖帽 + 发圈 |
-| `images/07_sliders_with_elastic_cord.jpg` | 左右滑块总成，发圈穿法 |
-| `images/08_grille_removal_tweezers.jpg` | 用镊子逆时针旋下格栅 |
-| `images/09_cord_routing_at_earcup.jpg` | 耳罩端：发圈绕过钢丝末端连接块 |
-| `images/10_earcup_lid_opened.jpg` | 上盖翻开，内部结构与引线 |
-| `images/11_cord_routing_measure_a.jpg` | 用尺测量左右尺寸（照片中两侧都装了垫套，仅为测量状态，勿照搬） |
-| `images/12_cord_routing_measure_b.jpg` | 用尺测量左右尺寸（同上，勿照搬垫套位置） |
-| `images/13_reassembled_side.jpg` | 装回后侧面（背景屏幕已打码） |
-| `images/14_reassembled_front.jpg` | 装回后正面（背景屏幕已打码） |
-| `images/15_reassembled_in_hand.jpg` | 装回后手持 |
-| `images/16_final_front.jpg` | 完成图（正面） |
-| `images/17_final_side.jpg` | 完成图（侧面） |
-| `ref/NOTICE.md` | 第三方 PDF 版权声明 |
-| `ref/Manuale-AKG-K712PRO.pdf` | AKG K712 PRO 规格页 + K612/K712 官方维修手册（爆炸图、零件表、维修提示）。**© AKG / HARMAN，不受本仓库许可协议约束** |
-| `ref/AKGK712.pdf` | K712 测量数据表（频响、阻抗、THD 等）。**© Source Interlink Media，不受本仓库许可协议约束** |
+| `README.md` | Repair documentation (English, this file) |
+| `README.zh-CN.md` | Repair documentation (Chinese) |
+| `LICENSE` | Full text of CC BY-NC-SA 4.0 |
+| `3d/k712pro_pin_v2.3mf` | Logo cap + inner disc, Bambu Studio project |
+| `3d/k712_inserts.3mf` | 4 × C-shaped spacers (added to one side as needed after measuring, to balance left/right), Bambu Studio project |
+| `images/01_hair_ties_preparation.jpg` | Preparation: a jar of braided hair ties (to replace the rubber loops) |
+| `images/02_printed_pin_caps.jpg` | The three finished two-color caps |
+| `images/03_pin_caps_heat_set_inserts.jpg` | Back of the caps, brass heat-set inserts |
+| `images/04_screw_size_check.jpg` | Checking the screw size with a gauge (M2 × 6 mm) |
+| `images/05_slider_inner_side_screw.jpg` | Inner side of the slider: disc + screw |
+| `images/06_slider_outer_side_logo_cap.jpg` | Outer side of the slider: logo cap + hair tie |
+| `images/07_sliders_with_elastic_cord.jpg` | Left and right slider assemblies, hair-tie routing |
+| `images/08_grille_removal_tweezers.jpg` | Turning the grille counter-clockwise with tweezers |
+| `images/09_cord_routing_at_earcup.jpg` | Ear-cup end: hair tie wrapped around the wire end block |
+| `images/10_earcup_lid_opened.jpg` | Lid opened, inner structure and leads |
+| `images/11_cord_routing_measure_a.jpg` | Measuring left/right dimensions (spacers on both sides here are only a measuring state — don't copy) |
+| `images/12_cord_routing_measure_b.jpg` | Measuring left/right dimensions (same as above — don't copy spacer placement) |
+| `images/13_reassembled_side.jpg` | Reassembled, side view (background screen blurred) |
+| `images/14_reassembled_front.jpg` | Reassembled, front view (background screen blurred) |
+| `images/15_reassembled_in_hand.jpg` | Reassembled, in hand |
+| `images/16_final_front.jpg` | Finished (front) |
+| `images/17_final_side.jpg` | Finished (side) |
+| `ref/NOTICE.md` | Copyright notice for the third-party PDFs |
+| `ref/Manuale-AKG-K712PRO.pdf` | AKG K712 PRO cutsheet + official K612/K712 service manual (exploded view, parts list, repair hints). **© AKG / HARMAN, not covered by this repo's license** |
+| `ref/AKGK712.pdf` | K712 measurement sheet (frequency response, impedance, THD, etc.). **© Source Interlink Media, not covered by this repo's license** |
 
 ---
 
-## 参考资料
+## References
 
-- **AKG K612 / K712 Service Manual**（#2458Z00XXX, 10/2015）及 **K712 PRO Cutsheet** —— `ref/Manuale-AKG-K712PRO.pdf`。本文的零件编号、名称和拆装方法均参考自此手册。官网：<https://www.akg.com>
-- **AKG K712 Headphone Measurements** —— `ref/AKGK712.pdf`（第三方测量数据，阻抗 @1kHz 约 67 Ω，90 dB SPL 需约 0.237 Vrms）。
+- **AKG K612 / K712 Service Manual** (#2458Z00XXX, 10/2015) and **K712 PRO Cutsheet** — `ref/Manuale-AKG-K712PRO.pdf`. Part numbers, names and the disassembly method in this document are based on this manual. Official site: <https://www.akg.com>
+- **AKG K712 Headphone Measurements** — `ref/AKGK712.pdf` (third-party measurements; impedance @1 kHz approx. 67 Ω, approx. 0.237 Vrms needed for 90 dB SPL).
 
 ---
 
-## 许可协议
+## License
 
-本仓库中 **作者原创的内容**——照片（`images/`）、文字（`README.md`）以及 3D 模型（`3d/`）——采用 [知识共享 署名-非商业性使用-相同方式共享 4.0 国际许可协议（CC BY-NC-SA 4.0）](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans) 授权，完整法律文本见 [`LICENSE`](LICENSE)。
+The **author's original content** in this repository — the photos (`images/`), the text (`README.md`, `README.zh-CN.md`) and the 3D models (`3d/`) — is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/). See [`LICENSE`](LICENSE) for the full legal code.
 
-- ✅ 可以：分享、转载、修改、打印自用，但需署名并以相同协议共享。
-- ❌ 不可以：**任何商业用途**（包括售卖打印件、模型文件或以本内容盈利）。
+- ✅ You may: share, repost, adapt and print for personal use, with attribution and under the same license.
+- ❌ You may not: use it for **any commercial purpose** (including selling prints, model files or otherwise profiting from this content).
 
-**`ref/` 目录下的 PDF 不在上述许可范围内。** 它们是第三方版权文档（© AKG Acoustics GmbH / HARMAN International；测量数据表 © Source Interlink Media），按原样收录、仅供维修参考，所有权利归原权利人所有，如权利人要求将立即删除。详见 [`ref/NOTICE.md`](ref/NOTICE.md)。
+**The PDFs in `ref/` are not covered by the license above.** They are third-party copyrighted documents (© AKG Acoustics GmbH / HARMAN International; measurement sheet © Source Interlink Media), included as-is for repair reference only. All rights belong to their respective owners, and they will be removed upon request by the rights holder. See [`ref/NOTICE.md`](ref/NOTICE.md).
 
-AKG 和 K712 是 AKG Acoustics GmbH 的商标。本项目与 AKG / HARMAN 无任何关联，也未获其认可。
+AKG and K712 are trademarks of AKG Acoustics GmbH. This project is not affiliated with or endorsed by AKG / HARMAN.
